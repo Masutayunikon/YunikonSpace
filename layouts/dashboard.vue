@@ -26,7 +26,7 @@
                 </div>
               </TransitionChild>
               <!-- Sidebar component, swap this element with another sidebar if you like -->
-              <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-2 dark:ring-white/10">
+              <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-2 dark:ring-white/10 dark:bg-gray-900">
                 <div class="flex h-16 shrink-0 items-center">
                   <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
                 </div>
@@ -35,7 +35,7 @@
                     <li>
                       <ul role="list" class="-mx-2 space-y-1">
                         <li v-for="item in navigation" :key="item.name">
-                          <a :href="item.href" :class="[item.current ? 'bg-gray-50 text-indigo-600' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
+                          <a :href="item.href" :class="[item.current ? 'bg-gray-50 text-indigo-600 dark:bg-gray-800 dark:text-white' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-300',  'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
                             <component :is="item.icon" :class="[item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600', 'h-6 w-6 shrink-0']" aria-hidden="true" />
                             {{ item.name }}
                           </a>
@@ -46,7 +46,7 @@
                       <div class="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
                       <ul role="list" class="-mx-2 mt-2 space-y-1">
                         <li v-for="team in teams" :key="team.name">
-                          <a :href="team.href" :class="[team.current ? 'bg-gray-50 text-indigo-600' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
+                          <a :href="team.href" :class="[team.current ? 'bg-gray-50 text-indigo-600 dark:bg-gray-800 dark:text-white' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-300',  'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
                             <span :class="[team.current ? 'text-indigo-600 border-indigo-600' : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600', 'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white']">{{ team.initial }}</span>
                             <span class="truncate">{{ team.name }}</span>
                           </a>
@@ -74,7 +74,7 @@
             <li>
               <ul role="list" class="-mx-2 space-y-1">
                 <li v-for="item in navigation" :key="item.name">
-                  <a :href="item.href" :class="[item.current ? 'bg-gray-50 text-indigo-600' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
+                  <a :href="item.href" :class="[item.current ? 'bg-gray-50 text-indigo-600 dark:bg-gray-800 dark:text-white' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-300',  'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
                     <component :is="item.icon" :class="[item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600', 'h-6 w-6 shrink-0']" aria-hidden="true" />
                     {{ item.name }}
                   </a>
@@ -85,7 +85,7 @@
               <div class="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
               <ul role="list" class="-mx-2 mt-2 space-y-1">
                 <li v-for="team in teams" :key="team.name">
-                  <a :href="team.href" :class="[team.current ? 'bg-gray-50 text-indigo-600' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
+                  <a :href="team.href" :class="[team.current ? 'bg-gray-50 text-indigo-600 dark:bg-gray-800 dark:text-white' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-300',  'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
                     <span :class="[team.current ? 'text-indigo-600 border-indigo-600' : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600', 'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white']">{{ team.initial }}</span>
                     <span class="truncate">{{ team.name }}</span>
                   </a>
@@ -125,8 +125,8 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
-import {Dialog, DialogPanel, TransitionChild, TransitionRoot} from '@headlessui/vue'
+import { ref } from 'vue'
+import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import {
   Bars3Icon,
   CalendarIcon,
@@ -139,8 +139,8 @@ import {
 } from '@heroicons/vue/24/outline'
 
 const navigation = [
-  {name: 'Dashboard', href: '#', icon: HomeIcon, current: true},
-  {name: 'Team', href: '#', icon: UsersIcon, current: false},
+  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
+  { name: 'Team', href: '#', icon: UsersIcon, current: false },
   {name: 'Projects', href: '#', icon: FolderIcon, current: false},
   {name: 'Calendar', href: '#', icon: CalendarIcon, current: false},
   {name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false},
